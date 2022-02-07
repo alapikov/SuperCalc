@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/icon.png" type="image/png">
+    <title>Super Calc</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts.js"></script>
+             
+<!-- ======== HEAD ENDS ======== -->
+</head>
+
+<body> 
+<!-- ======== BODY STARTS ======== -->
+<header></header>
+
+<div id="captionTop"><p id="welcome" class="notAnimated">Welcome to SuperCalc!</p>
+    <p id="smile" class="notAnimated">:)</p>
+</div>
+<div id="lineTop">
+    <div id="settingsBox">
+        <img src="images/symbolBtn3.png" id="pwrModeSwitch">
+        <img src="images/symbolBtn1.png" id="symbolSwitch">
+        <div id="colorSwitch" class="colorChangeble selectedOrange"></div>
+    </div>
+</div>
+
+<div id="calcBox">
+    <div id="resultField" class="selectedOrange"></div>
+
+    <div id="num7" class="btn row2 colorChangeble selectedOrange">7</div>
+    <div id="num8" class="btn row2 colorChangeble selectedOrange">8</div>
+    <div id="num9" class="btn row2 colorChangeble selectedOrange">9</div>
+    <div id="powerBtn" class="btn operands row2 colorChangeble selectedOrange"><img src="images/powerSymbol.png" class="symbolImg"></div>
+    <div id="rootBtn" class="btn operands row2 colorChangeble selectedOrange"><img src="images/rootSymbol.png" class="symbolImg"></div>
+    <div id="deleteBtn" class="btn operands row2 colorChangeble selectedOrange"><img src="images/deleteSymbol.png" class="symbolImg"></div>
+
+    <div id="num4" class="btn row3 colorChangeble selectedOrange">4</div>
+    <div id="num5" class="btn row3 colorChangeble selectedOrange">5</div>
+    <div id="num6" class="btn row3 colorChangeble selectedOrange">6</div>
+    <div id="minusBtn" class="btn operands row3 colorChangeble selectedOrange"><img src="images/minusSymbol.png" class="symbolImg"></div>
+    <div id="divBtn" class="btn operands row3 colorChangeble selectedOrange"><img src="images/divideSymbol.png" class="symbolImg"></div>
+    <div id="clearBtn" class="btn operands row3 colorChangeble selectedOrange"><img src="images/clearSymbol.png" class="symbolImg"></div>
+
+    <div id="num1" class="btn row4 colorChangeble selectedOrange">1</div>
+    <div id="num2" class="btn row4 colorChangeble selectedOrange">2</div>
+    <div id="num3" class="btn row4 colorChangeble selectedOrange">3</div>
+    <div id="plusBtn" class="btn operands row4 colorChangeble selectedOrange"><img src="images/plusSymbol.png" class="symbolImg"></div>
+    <div id="multBtn" class="btn operands row4 colorChangeble selectedOrange"><img src="images/multiplySymbol.png" class="symbolImg"></div>
+    <div id="percentBtn" class="btn operands row4 colorChangeble selectedOrange"><img src="images/percentSymbol.png" class="symbolImg"></div>
+
+    <div id="num0" class="btn row5 colorChangeble selectedOrange">0</div>
+    <div id="num00" class="btn row5 colorChangeble selectedOrange">00</div>
+    <div id="dotBtn" class="btn row5 colorChangeble selectedOrange">.</div>
+    <div id="equalsBtn" class="btn operands row5 colorChangeble selectedOrange"><img src="images/equalsSymbol.png" class="symbolImg"></div>
+    <div id="plusMinusBtn" class="btn operands row5 colorChangeble selectedOrange"><img src="images/plusMinusSymbol.png" class="symbolImg"></div>
+
+</div>
+
+<div id="powerBox" class="notAnimated">
+    <div  id="binBtn" class="btn row2 colorChangeble selectedOrange">01</div>
+    <div  id="octBtn" class="btn row2 colorChangeble selectedOrange">07</div>
+    <div  id="hexBtn" class="btn row2 colorChangeble selectedOrange">0F</div>
+
+    <div  id="piBtn" class="btn row3 DigitSysOff colorChangeble selectedOrange">π</div>
+    <div  id="tauBtn" class="btn row3 DigitSysOff colorChangeble selectedOrange">τ</div>
+    <div  id="eBtn" class="btn row3 DigitSysOff colorChangeble selectedOrange">e</div>
+
+    <div  id="numSin" class="btn row4 colorChangeble selectedOrange">sin</div>
+    <div  id="numCos" class="btn row4 colorChangeble selectedOrange">cos</div>
+    <div  id="numTan" class="btn row4 colorChangeble selectedOrange">tan</div>
+
+    <div  id="numRandom" class="btn row5 colorChangeble selectedOrange">?</div>
+    <div  id="numLog" class="btn row5 colorChangeble selectedOrange">log</div>
+    <div  id="factBtn" class="btn row5 colorChangeble selectedOrange">!</div>
+</div>
+<div id="lineMiddle">
+    <div id="calcHistory">
+        <!-- history lines will be generated and put here -->
+    </div>
+</div>
+
+<div id="footerBlock">
+    <p><span id="footerPwrMode" class="colorStress selectedOrange">Power Mode ON</span></p>
+    <p>Built with SuperCalc Engine v 5.0</p>
+    <p>More Super utilities at <span id="superUtilOrg" class="colorStress selectedOrange">superutil.org</span></p>
+    <p>Design and development: Alexander Lapikov</p>
+</div>  
+
+<!-- ======== BODY ENDS ======== -->
+</body>
+</html>

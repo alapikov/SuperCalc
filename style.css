@@ -1,0 +1,633 @@
+@font-face {
+    font-family: firaRegular;
+    src: url(fonts/FiraSans-Regular.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: firaSemibold;
+    src: url(fonts/FiraSans-SemiBold.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: firaBold;
+    src: url(fonts/FiraSans-Bold.ttf);
+    font-weight: 800;
+}
+@font-face {
+    font-family: firaLight;
+    src: url(fonts/FiraSans-Light.ttf);
+    font-weight: 200;
+}
+
+body {
+    background: #fff;
+    font-family: 'fira', sans-serif;
+    color:rgb(27, 27, 27);
+    cursor: default;
+} 
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+#lineTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 58px;
+    padding-right: 120px;
+    padding-left: 120px;
+    margin-top: 72px;
+}
+#settingsBox {
+    display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    padding-top: 13px;
+    height: 58px;
+    width: 230px;
+}
+#captionTop {
+    position: absolute;
+    z-index: 2;
+    width: 720px;
+    top: 72px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    font-family: firaLight;
+    font-size: 48px;
+    text-align: center;
+        opacity: 0;
+        transform: translate(0%, -80%);
+        transition-property: opacity, trasform;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 1.5s;
+}
+    #captionTop.animated {
+        opacity: 1;
+        transform: translate(0%, 0%);
+        transition-property: opacity, transform;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 1.5s;
+    }
+#welcome {
+    position: relative;
+}
+    #welcome.notAnimated {
+        transform: translate(0%, 0%);
+        transition-property: transform;
+        transition-duration: 1.6s;
+        transition-timing-function: cubic-bezier(0.43, 0, 0.48, 1);
+        transition-delay: 0s;
+    }
+    #welcome.animated {
+        transform: translate(-8%, 0%);
+        transition-property: transform;
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0.43, 0, 0.48, 1);
+        transition-delay: 0s;
+    }
+#smile {
+    width: 60px;
+    z-index: 2;
+    position: relative;
+    left: 552px;
+    bottom: 66px;
+}
+    #smile.notAnimated {
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 0.8s;
+        transition-timing-function: cubic-bezier(0.43, 0, 0.48, 1);
+        transition-delay: 0s
+    }
+    #smile.animated {
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0.43, 0, 0.48, 1);
+        transition-delay: 0.8s;
+    }
+#pwrModeSwitch {
+    width: 64px;
+    height: 64px;
+    padding-right: 8px;
+    padding-top: 5px;
+}
+#symbolSwitch {
+    width: 64px;
+    height: 64px;
+    padding-right: 22px;
+}
+#colorSwitch {
+    height: 42px;
+    width: 42px;
+    border-radius: 30px;
+}
+
+#calcBox {
+    position: absolute;
+    height: 540px;
+    width: 720px;
+    z-index: 3;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    top: 210px;
+    display: grid;
+        grid-template-columns: repeat(6, 120px);
+        grid-auto-rows: 108px; 
+}
+#powerBox {
+    position: absolute;
+    height: 540px;
+    z-index: 1; 
+    top: 210px;
+    left: 580px;
+    display: grid;
+        grid-template-columns: repeat(3, 120px);
+        grid-auto-rows: 108px; 
+}
+    #powerBox.notAnimated {
+        transform: translate(0%, 0%);
+        transition-property: transform;
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0.43, 0, 0.48, 1);
+        transition-delay: 0s
+    }
+    #powerBox.animated {
+        transform: translate(-360px, 0%);
+        transition-property: transform;
+        transition-duration: 2s;
+        transition-timing-function: cubic-bezier(0.43, 0, 0.48, 1);
+        transition-delay: 0s
+    }
+
+#num7.fillEdges {
+    border-radius: 0 !important;
+}
+#num0.fillEdges {
+    border-radius: 0 !important;
+}
+
+#resultField {
+    height: 108px;
+    width: 720px;
+    box-sizing: border-box;
+    padding-right: 50px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    background-color: #fff;
+    font-family: firaRegular;
+    font-size: 64px;
+    line-height: 108px;
+    text-align: right;
+}
+#equalsBtn {
+    height: 108px;
+    width: 240px;
+        grid-row-start: 5;
+        grid-row-end: 5;
+        grid-column-start: 4;
+        grid-column-end: 5;
+}
+#plusMinusBtn {
+    height: 108px;
+    width: 120px;
+        grid-row-start: 5;
+        grid-row-end: 5;
+        grid-column-start: 6;
+        grid-column-end: 6;
+}
+#num7 {
+    border-radius: 28% 0% 0% 0%;
+}
+#num0 {
+    border-radius: 0% 0% 0% 28%;
+}
+#deleteBtn {
+    border-radius: 0% 28% 0% 0%;
+}
+#plusMinusBtn {
+    border-radius: 0% 0% 28% 0%;
+}
+#binBtn {
+    border-radius: 28% 0% 0% 0%;
+}
+#numRandom {
+    border-radius: 0% 0% 0% 28%;
+}
+
+#lineMiddle {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 540px;
+    padding-right: 120px;
+    padding-left: 120px;
+    margin-top: 80px;
+}
+#calcHistory {
+    width: 386px;
+    max-width: 386px;
+    height: 432px;
+    max-height: 432px;
+    padding-top: 108px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background-color: #fff;
+}
+div.historyLine {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-family: 'firaRegular';
+    font-size: 34px;
+    background-color: #fff !important;
+}
+    div.historyLine:hover {
+        background: #fff !important;
+    }
+#footerBlock {
+    margin-top: 70px;
+    text-align: center;
+    font-size: 20px;
+    font-family: firaLight;
+        opacity: 0;
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 1.5s;
+}
+    #footerBlock.animated {
+        opacity: 1;
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 1.5s;
+    }
+#footerPwrMode {
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.8s;
+}
+    #footerPwrMode.activated {
+        opacity: 1;
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 1s;
+        transition-delay: 0.4s;
+    }
+div.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 108px;
+    width: 120px;
+    color: #fff;
+    
+    font-family: firaRegular;
+    font-size: 54px;
+    /* line-height: 108px; */
+    margin: 0px;
+    /* text-align: center; */
+}
+.row2 {
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+.row3 {
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+.row4 {
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+.row5 {
+    grid-row-start: 5;
+    grid-row-end: 5;
+}
+.operands {
+    font-size: 46px !important;
+}
+.colorStress {
+    background-color: #fff !important;
+}
+img.symbolImg {
+    width: 80px;
+    height: 80px;
+}
+
+/* COLOR PALETTE */
+
+.selectedOrange {
+    background-color: #E17F04;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .selectedOrange:hover {
+        background-color: #c87209;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.selectedYellow {
+    background-color: #e8d100;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .selectedYellow:hover {
+        background-color: #dbbf09;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.selectedGreen {
+    background-color: #62d609;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .selectedGreen:hover {
+        background-color: #5bc708;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.selectedLightblue {
+    background-color: #00d4db;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .selectedLightblue:hover {
+        background-color: #08c1c7;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.selectedBlue {
+    background-color: #1f70db;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .selectedBlue:hover {
+        background-color: #0857bf;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.selectedPurple {
+    background-color: #5843e0;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .selectedPurple:hover {
+        background-color: #2108c7;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.selectedPink {
+    background-color: #e01be0;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .selectedPink:hover {
+        background-color: #c708c7;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.selectedRed {
+    background-color: #d9200f;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .selectedRed:hover {
+        background-color: #c71808;
+        transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+
+/* for result field */
+
+#resultField.selectedOrange {
+    color: #E17F04;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    #resultField.selectedOrange:hover {
+        color: #c87209;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+#resultField.selectedYellow {
+    color: #e8d100;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    #resultField.selectedYellow:hover {
+        color: #dbbf09;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+#resultField.selectedGreen {
+    color: #62d609;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    #resultField.selectedGreen:hover {
+        color: #5bc708;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+#resultField.selectedLightblue {
+    color: #00d4db;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    #resultField.selectedLightblue:hover {
+        color: #08c1c7;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+#resultField.selectedBlue {
+    color: #1f70db;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    #resultField.selectedBlue:hover {
+        color: #0857bf;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+#resultField.selectedPurple {
+    color: #5843e0;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    #resultField.selectedPurple:hover {
+        color: #2108c7;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+#resultField.selectedPink {
+    color: #e01be0;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    #resultField.selectedPink:hover {
+        color: #c708c7;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+#resultField.selectedRed {
+    color: #d9200f;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    #resultField.selectedRed:hover {
+        color: #c71808;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+
+ /*for colored text  */
+
+.colorStress.selectedOrange, div.historyLine.selectedOrange {
+    color: #E17F04;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .colorStress.selectedOrange:hover, div.historyLine.selectedOrange:hover {
+        color: #c87209;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.colorStress.selectedYellow, div.historyLine.selectedYellow {
+    color: #e8d100;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .colorStress.selectedYellow:hover, div.historyLine.selectedYellow:hover {
+        color: #dbbf09;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.colorStress.selectedGreen, div.historyLine.selectedGreen {
+    color: #62d609;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .colorStress.selectedGreen:hover, div.historyLine.selectedGreen:hover {
+        color: #5bc708;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.colorStress.selectedLightblue, div.historyLine.selectedLightblue {
+    color: #00d4db;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .colorStress.selectedLightblue:hover, div.historyLine.selectedLightblue:hover {
+        color: #08c1c7;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.colorStress.selectedBlue, div.historyLine.selectedBlue {
+    color: #1f70db;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .colorStress.selectedBlue:hover, div.historyLine.selectedBlue:hover  {
+        color: #0857bf;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.colorStress.selectedPurple, div.historyLine.selectedPurple {
+    color: #5843e0;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .colorStress.selectedPurple:hover, div.historyLine.selectedPurple:hover  {
+        color: #2108c7;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.colorStress.selectedPink, div.historyLine.selectedPink {
+    color: #e01be0;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .colorStress.selectedPink:hover, div.historyLine.selectedPink:hover  {
+        color: #c708c7;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+.colorStress.selectedRed, div.historyLine.selectedRed {
+    color: #d9200f;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+    transition-duration: 0.5s;
+}
+    .colorStress.selectedRed:hover, div.historyLine.selectedRed:hover  {
+        color: #c71808;
+        transition-property: color;
+        transition-timing-function: cubic-bezier(0.31, 0, 0.18, 1);
+        transition-duration: 0.3s;
+    }
+
+
+
+    
